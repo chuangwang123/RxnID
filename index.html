@@ -1,490 +1,386 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Molecular Identifier Visual Prompt and Verifiable Reinforcement Learning for Chemical Reaction Diagram Parsing">
+	<meta name="keywords" content="Chemical Reaction Parsing, Document AI, LVLM, IdtVP, Reinforcement Learning, DAPO">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Molecular Identifier Visual Prompt and Verifiable Reinforcement Learning for Chemical Reaction Diagram Parsing</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 
-    gtag('js', new Date());
+		gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+		gtag('config', 'G-PYVRSFMDRL');
+	</script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+	<link rel="stylesheet" href="./static/css/bulma.min.css">
+	<link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+	<link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+	<link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<link rel="stylesheet" href="./static/css/index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+	<link rel="stylesheet" href="./static/css/code_block.css">
+	<link rel="icon" href="./static/images/favicon.svg">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script defer src="./static/js/fontawesome.all.min.js"></script>
+	<script src="./static/js/bulma-carousel.min.js"></script>
+	<script src="./static/js/bulma-slider.min.js"></script>
+	<script src="./static/js/index.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/tex.min.js"></script>
+	<script src="./static/js/code_block.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
+	<section class="hero">
+		<div class="hero-body">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered">
+					<div class="column has-text-centered">
+						<h1 class="title is-2 publication-title">Molecular Identifier Visual Prompt and Verifiable Reinforcement Learning for Chemical Reaction Diagram Parsing</h1>
+						
+						<div class="is-size-5 publication-authors" style="margin-top: 15px;">
+							<span class="author-block">Jiahe Song<sup>1,2*</sup>,</span>
+							<span class="author-block">Chuang Wang<sup>3,2*</sup>,</span>
+							<span class="author-block">Yinfan Wang<sup>2*</sup>,</span>
+							<span class="author-block">Hao Zheng<sup>5*</sup>,</span>
+							<span class="author-block">Rui Nie<sup>3,2*</sup>,</span>
+							<span class="author-block">Bowen Jiang<sup>4,2*</sup>,</span>
+							<span class="author-block">Xingjian Wei<sup>2</sup>,</span>
+							<span class="author-block">Junyuan Gao<sup>2</sup>,</span>
+							<span class="author-block">Yubin Wang<sup>2</sup>,</span>
+							<span class="author-block">Bin Wang<sup>2</sup>,</span>
+							<span class="author-block">Lijun Wu<sup>2</sup>,</span>
+							<span class="author-block">Jiang Wu<sup>2‡</sup>,</span>
+							<span class="author-block">Qian Yu<sup>3‡</sup>,</span>
+							<span class="author-block">Conghui He<sup>2‡</sup></span>
+						</div>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
+						<div class="is-size-6 publication-authors" style="margin-top: 10px;">
+							<span class="author-block"><sup>*</sup>Equal Contribution, </span>
+							<span class="author-block"><sup>‡</sup>Correspondence Authors</span>
+						</div>
 
-  </div>
-</nav>
+						<div class="is-size-6 publication-authors" style="margin-top: 5px;">
+							<span class="author-block"><sup>1</sup>Shanghai Jiao Tong University, </span>
+							<span class="author-block"><sup>2</sup>Shanghai AI Laboratory, </span>
+							<span class="author-block"><sup>3</sup>Beihang University, </span><br>
+							<span class="author-block"><sup>4</sup>Peking University, </span>
+							<span class="author-block"><sup>5</sup>South China Normal University</span>
+						</div>
 
+						<div class="column has-text-centered" style="margin-top: 20px;">
+							<div class="publication-links">
+								<span class="link-block">
+									<a href="#" class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fas fa-file-pdf"></i>
+										</span>
+										<span>Paper</span>
+									</a>
+								</span>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
-          </div>
+								<span class="link-block">
+									 <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="far fa-images"></i>
+                                  </span>
+                                  <span>Data</span>
+                                </a>
+								</span>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
-          </div>
+								<span class="link-block">
+									<a href="#" class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fab fa-github"></i>
+										</span>
+										<span>Code (Coming Soon)</span>
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-            </div>
+	<section class="hero teaser">
+		<div class="container is-max-desktop">
+			<div class="hero-body">
+				<div class="column" style="align-self: center">
+					<img src="./static/images/teaser.png" alt="IdtVP Framework Teaser">
+				</div>
+				<h2 class="subtitle has-text-centered" style="margin-top: 15px;">
+					By leveraging naturally occurring <b>molecule identifiers</b> (e.g., 1a, 2b) as visual prompts, <b>IdtVP</b> explicitly activates the chemical knowledge acquired during VLM pre-training, significantly boosting parsing accuracy and out-of-distribution robustness.
+				</h2>
+			</div>
+		</div>
+	</section>
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+	<section class="section">
+		<div class="container is-max-desktop">
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 class="title is-3">Abstract</h2>
+					<div class="content has-text-justified">
+						<p>
+						  Reaction diagram parsing (RxnDP) is critical for extracting chemical synthesis information from literature. Although recent Vision-Language Models (VLMs) have emerged as a promising paradigm to automate this complex visual reasoning task, their application is fundamentally bottlenecked by the inability to align visual chemical entities with pre-trained knowledge, alongside the inherent discrepancy between token-level training and reaction-level evaluation.
+						</p>
+						<p>
+						  To address these dual challenges, this work enhances VLM-based RxnDP from two complementary perspectives. First, we propose <b>Identifier as Visual Prompting (IdtVP)</b>, which leverages naturally occurring molecule identifiers to activate the chemical knowledge acquired during VLM pre-training, enabling powerful zero-shot and out-of-distribution capabilities. 
+						</p>
+						<p>
+						  Second, we introduce <b>Re<sup>3</sup>-DAPO</b>, a reinforcement learning algorithm that leverages verifiable rewards to directly optimize reaction-level metrics, thereby achieving consistent gains over standard supervised fine-tuning by eliminating forced serialization noise.
+						</p>
+						<p>
+						  Additionally, we release the <b>ScannedRxn</b> benchmark, comprising scanned historical reaction diagrams with real-world artifacts, to rigorously assess model robustness. Our contributions advance the accuracy and generalization of VLM-based reaction diagram parsing.
+						</p>
+					</div>
+				</div>
+			</div>
+			</div>
+	</section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
+	<section class="section">
+		<div class="container is-max-desktop">
 
+			<div class="columns is-centered">
+				<div class="column is-full-width">
+					<h3 class="title is-4">Verifiable Reinforcement Learning: Re<sup>3</sup>-DAPO</h3>
+					
+					<div class="content has-text-justified">
+						<p>
+							Standard Supervised Fine-Tuning (SFT) relies on token-level teacher-forcing, compelling the network to memorize arbitrary JSON serializations rather than genuine chemical semantics. This forced ordering creates significant objective misalignment for the inherently order-agnostic RxnDP task.
+						</p>
+					</div>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+					<div class="column" style="align-self: center">
+						<img src="./static/images/pipeline.png" alt="Re3-DAPO Pipeline">
+					</div>
 
+					<div class="content has-text-justified">
+						<p>
+							To overcome this, we designed a progressive three-stage pipeline. Following Visual Prompt Generation and a Cold Start with SFT, we introduce the <b>Re<sup>3</sup>-DAPO</b> fine-tuning strategy. By shifting the learning objective from next-token prediction to set-level matching (translating evaluation metrics like Hybrid Match and Soft Match into dense reward signals), Re<sup>3</sup>-DAPO allows the model to explore valid JSON serializations anchored solely by an order-invariant semantic objective.
+						</p>
+					</div>
+					<br />
+				</div>
+			</div>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
+			<div class="columns is-centered">
+				<div class="column is-full-width">
+					<h3 class="title is-4">The ScannedRxn Historical Benchmark</h3>
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
+					<div class="column" style="align-self: center">
+						<img src="./static/images/scannedrxn.png" alt="ScannedRxn Dataset Samples">
+					</div>
+					
+					<div class="content has-text-justified">
+						<p>
+							Existing RxnDP benchmarks are primarily derived from contemporary, born-digital literature. To evaluate true cross-era generalization, we introduce the <b>ScannedRxn</b> dataset. Comprising 200 historically significant reaction diagrams spanning the 1950s to the 1990s, this benchmark features severe scanning noise, typewriter fonts, and non-standard legacy layouts, posing distinct challenges to modern end-to-end parsing models.
+						</p>
+					</div>
+					<br />
+				</div>
+			</div>
 
+			<div class="columns is-centered">
+				<div class="column is-full-width">
+					<h3 class="title is-4">Cross-Modal Verification via IdtVP</h3>
 
-<section class="section">
-  <div class="container is-max-desktop">
+					<div class="column" style="align-self: center">
+						<img src="./static/images/crossmodal.png" alt="Cross-Modal Verification Pipeline">
+					</div>
+					
+					<div class="content has-text-justified">
+						<p>
+							Unlike arbitrary bounding box indices, IdtVP establishes a robust semantic bridge between vision and language by adopting the author's native identifiers. We exploit this shared vocabulary through the <b>Idt-TE (Identifier-based Textual Extraction)</b> pipeline. This double-stream architecture aligns LLM-extracted textual data with visual predictions seamlessly, enabling powerful downstream applications such as Precision Refinement (resolving visual ambiguities using textual context) and Contextual Enrichment (completing visual graphs with hidden attributes).
+						</p>
+					</div>
+					<br />
+				</div>
+			</div>
 
-    <div class="columns is-centered">
+			<div class="columns is-centered">
+				<div class="column is-full-width">
+					<h3 class="title is-4">State-of-the-Art Performance</h3>
 
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
+					<div class="content has-text-justified">
+						<p>
+							Extensive experiments confirm that the IdtVP strategy paired with Re<sup>3</sup>-DAPO optimization dramatically outperforms existing methodologies. Below is the performance summary across RxnScribe-test, RxnCaption-15k-test, and the historical ScannedRxn benchmarks.
+						</p>
+					</div>
 
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
+					<div class="table-container" style="overflow-x: auto; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+						<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="font-size: 0.9em; white-space: nowrap;">
+							<thead>
+								<tr>
+									<th rowspan="2" style="vertical-align: middle; text-align: center;">Model</th>
+									<th rowspan="2" style="vertical-align: middle; text-align: center;">Strategy</th>
+									<th colspan="2" style="text-align: center;">RxnScribe-test</th>
+									<th colspan="2" style="text-align: center;">RxnCaption-15k-test</th>
+									<th colspan="2" style="text-align: center;">ScannedRxn</th>
+								</tr>
+								<tr>
+									<th style="text-align: center;">Hybrid-F1</th>
+									<th style="text-align: center;">Soft-F1</th>
+									<th style="text-align: center;">Hybrid-F1</th>
+									<th style="text-align: center;">Soft-F1</th>
+									<th style="text-align: center;">Hybrid-F1</th>
+									<th style="text-align: center;">Soft-F1</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th colspan="8" style="text-align: center; background-color: #f5f5f5;">Trained Models</th>
+								</tr>
+								<tr>
+									<td style="text-align: center;"><b>RxnID+RL (Ours)</b></td>
+									<td style="text-align: center;">IdtVP</td>
+									<td style="text-align: center;">75.0</td>
+									<td style="text-align: center;">85.9</td>
+									<td style="text-align: center;"><b>64.4</b></td>
+									<td style="text-align: center;"><b>74.5</b></td>
+									<td style="text-align: center;"><b>56.3</b></td>
+									<td style="text-align: center;"><b>76.2</b></td>
+								</tr>
+								<tr>
+									<td style="text-align: center;"><b>RxnID (Ours)</b></td>
+									<td style="text-align: center;">IdtVP</td>
+									<td style="text-align: center;">74.6</td>
+									<td style="text-align: center;">85.6</td>
+									<td style="text-align: center;">61.2</td>
+									<td style="text-align: center;">72.8</td>
+									<td style="text-align: center;">54.5</td>
+									<td style="text-align: center;">74.4</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">RxnCaption+RL</td>
+									<td style="text-align: center;">BIVP</td>
+									<td style="text-align: center;">75.9</td>
+									<td style="text-align: center;">86.9</td>
+									<td style="text-align: center;">64.1</td>
+									<td style="text-align: center;">73.6</td>
+									<td style="text-align: center;">45.1</td>
+									<td style="text-align: center;">59.2</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">RxnCaption</td>
+									<td style="text-align: center;">BIVP</td>
+									<td style="text-align: center;">72.2</td>
+									<td style="text-align: center;">86.2</td>
+									<td style="text-align: center;">59.8</td>
+									<td style="text-align: center;">70.4</td>
+									<td style="text-align: center;">51.0</td>
+									<td style="text-align: center;">69.5</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">RxnScribe_w/15k</td>
+									<td style="text-align: center;">BROS</td>
+									<td style="text-align: center;">70.7</td>
+									<td style="text-align: center;">82.8</td>
+									<td style="text-align: center;">47.4</td>
+									<td style="text-align: center;">55.2</td>
+									<td style="text-align: center;">50.5</td>
+									<td style="text-align: center;">65.9</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">RxnIM</td>
+									<td style="text-align: center;">BROS</td>
+									<td style="text-align: center;">40.5</td>
+									<td style="text-align: center;">22.8</td>
+									<td style="text-align: center;">37.4</td>
+									<td style="text-align: center;">70.5</td>
+									<td style="text-align: center;">30.3</td>
+									<td style="text-align: center;">31.6</td>
+								</tr>
+								<tr>
+									<th colspan="8" style="text-align: center; background-color: #f5f5f5;">Zero-Shot (Closed-source Models)</th>
+								</tr>
+								<tr>
+									<td style="text-align: center;">Gemini 3.0 Pro</td>
+									<td style="text-align: center;">IdtVP</td>
+									<td style="text-align: center;">71.7</td>
+									<td style="text-align: center;">88.1</td>
+									<td style="text-align: center;">58.3</td>
+									<td style="text-align: center;">78.2</td>
+									<td style="text-align: center;">50.3</td>
+									<td style="text-align: center;">83.9</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">GPT-4o</td>
+									<td style="text-align: center;">IdtVP</td>
+									<td style="text-align: center;">29.9</td>
+									<td style="text-align: center;">22.1</td>
+									<td style="text-align: center;">16.0</td>
+									<td style="text-align: center;">37.7</td>
+									<td style="text-align: center;">18.3</td>
+									<td style="text-align: center;">58.2</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
+				</div>
+			</div>
 
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+		</div>
+	</section>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-  </div>
-</section>
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+	<section class="section" id="BibTeX">
+		<div class="container is-max-desktop content">
+			<h2 class="title">BibTeX</h2>
+			<div class="code-container">
+				<pre><code class="bibtex">@article{song2026molecular,
+  title={Molecular Identifier Visual Prompt and Verifiable Reinforcement Learning for Chemical Reaction Diagram Parsing},
+  author={Song, Jiahe and Wang, Chuang and Wang, Yinfan and Zheng, Hao and Nie, Rui and Jiang, Bowen and Wei, Xingjian and Gao, Junyuan and Wang, Yubin and Wang, Bin and Wu, Lijun and Wu, Jiang and Yu, Qian and He, Conghui},
+  journal={arXiv preprint},
+  year={2026}
 }</code></pre>
-  </div>
-</section>
+				<button class="copy-button" onclick="copyCode(this)" aria-label="Copy code">
+					<i class="fas fa-copy icon"></i><span class="text">Copy</span>
+				</button>
+			</div>
+		</div>
+	</section>
 
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+	<footer class="footer">
+		<div class="container">
+			<div class="content has-text-centered">
+				<a class="icon-link" href="#">
+					<i class="fas fa-file-pdf"></i>
+				</a>
+				<a class="icon-link" href="#" class="external-link" disabled>
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+			<div class="columns is-centered">
+				<div class="column is-8">
+					<div class="content">
+						<p>
+							Modified from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 </body>
+
 </html>
