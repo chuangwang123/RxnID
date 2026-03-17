@@ -1,2 +1,2 @@
-# RxnID's githug page
+# RxnID's github page
 
